@@ -1,0 +1,37 @@
+Package: silhouetteTree
+Title: Silhouette-Based Choice of Cluster Number and Cluster-Coloured Trees, with a Point-and-Click App
+Version: 0.1.0
+Authors@R: person("Tomoyoshi", "Kaneko", email = "kanekotomoyoshi@akane.waseda.jp", role = c("aut", "cre"))
+Description: Chooses the number of clusters by the mean silhouette width and
+    draws dendrograms or phylogenies coloured by cluster. Input is either a
+    Newick tree (distances are patristic, via ape::cophenetic.phylo) or a table
+    of measurements with numeric, binary and categorical columns (Gower
+    distance via cluster::daisy, so that large absolute values of one column do
+    not dominate; Euclidean and Manhattan with min-max or z-score
+    normalisation are also available). Follows the analysis of Kaneko et al.
+    (2025) <doi:10.1128/jvi.01061-25>. A Shiny application (run_app()) makes the
+    whole workflow available without writing code.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Depends:
+    R (>= 4.0.0)
+Imports:
+    ape,
+    cluster,
+    ggplot2,
+    openxlsx,
+    readxl,
+    stats,
+    utils,
+    grDevices
+Suggests:
+    shiny,
+    DT,
+    svglite,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3
