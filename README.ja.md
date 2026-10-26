@@ -48,20 +48,6 @@ plot_dendrogram(res)
 
 詳しい仕様と例は [docs/specification.md](docs/specification.md)(日本語・英語併記)にあります。
 
-## 自分のサーバーで公開する(GitHub → Posit Connect Cloud)
-
-1. このフォルダの中身を GitHub リポジトリ(public、`main` ブランチ)に置く
-2. 手元の R で、パッケージのルートから一度だけ(`library()` を増やしたときもう一度)実行する
-
-   ```r
-   install.packages(c("shiny", "DT", "ggplot2", "openxlsx", "readxl", "ape",
-                      "cluster", "svglite", "rsconnect"))
-   source("inst/shiny_app/deploy.R")    # inst/shiny_app/manifest.json ができる
-   ```
-
-   `manifest.json` も GitHub に push する
-3. <https://connect.posit.cloud> で Publish → Shiny → from GitHub を選び、リポジトリとブランチ、**Primary file = `inst/shiny_app/app.R`** を指定して公開する
-4. 以後は push すると自動で更新される
 
 ## 注意点
 
