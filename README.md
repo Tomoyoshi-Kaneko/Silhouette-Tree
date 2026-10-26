@@ -36,9 +36,7 @@ Constant columns and ID-like columns are left out automatically. Missing values 
 
 ## Use the app
 
-Online (once deployed, see below) — just open the URL.
-
-Locally:
+Online (once deployed, see below) — just open the URL:
 https://01a17622-d74b-7e87-157c-aa3f6c7bfcf0.share.connect.posit.cloud/
 
 ```r
