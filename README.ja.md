@@ -36,7 +36,10 @@
 1 サンプルだけのクラスターは *s* = 0 と定義されるため棒が出ません(遠い外群はこうなりやすく、平均を下げます。「Exclude samples」で除外できます)。
 
 ## R から使う
+以下のURLからweb上で使えます:
+https://01a17622-d74b-7e87-157c-aa3f6c7bfcf0.share.connect.posit.cloud/
 
+あるいは
 ```r
 library(silhouetteTree)
 res <- run_silhouette_tree("tree.nwk", type = "newick")     # 系統樹
