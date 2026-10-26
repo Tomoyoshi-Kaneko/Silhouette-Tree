@@ -39,6 +39,7 @@ Constant columns and ID-like columns are left out automatically. Missing values 
 Online (once deployed, see below) — just open the URL.
 
 Locally:
+https://01a17622-d74b-7e87-157c-aa3f6c7bfcf0.share.connect.posit.cloud/
 
 ```r
 install.packages(c("shiny", "DT", "ggplot2", "openxlsx", "readxl", "ape", "cluster", "svglite"))
@@ -67,23 +68,6 @@ plot_dendrogram(res); plot_phylogeny(res)
 plot_silhouette_k(res); plot_silhouette_samples(res)
 st_write_workbook(res, "results.xlsx")
 ```
-
-## Deploying as a free public web app (GitHub → Posit Connect Cloud)
-
-This is the same workflow as the susiR app.
-
-1. Put the contents of this folder in a GitHub repository (public, branch `main`).
-2. On your computer, from the package root, run once (and again whenever you add a new `library()` call):
-   ```r
-   install.packages(c("shiny", "DT", "ggplot2", "openxlsx", "readxl", "ape",
-                      "cluster", "svglite", "rsconnect"))
-   source("inst/shiny_app/deploy.R")     # writes inst/shiny_app/manifest.json
-   ```
-   Commit and push `inst/shiny_app/manifest.json`.
-3. At <https://connect.posit.cloud> choose **Publish → Shiny → from GitHub**, select the repository and branch, set the **primary file** to `inst/shiny_app/app.R`, and publish.
-4. Every later push to the branch redeploys the app.
-
-`app.R` loads the functions straight from the `R/` folder (`../../R`), so no package installation is needed on the server.
 
 ## Checks
 
