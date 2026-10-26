@@ -3,7 +3,7 @@ silhouetteTree 仕様書 / Specification
 
 # 1. 目的 / Purpose
 
-**日本語** — このパッケージは、(a) 系統樹ファイル(Newick)または (b)
+このパッケージは、(a) 系統樹ファイル(Newick)または (b)
 自分で測定した表から、
 階層クラスタリングを行い、**平均シルエット係数が最大になるクラスター数
 k** を選び、
@@ -12,7 +12,7 @@ Shiny アプリ (`run_app()`)と、同じ処理を R
 から呼ぶ関数群の両方を提供します。 計算の流れは Kaneko *et al.* (J Virol
 2025, <doi:10.1128/jvi.01061-25>) の解析スクリプトに従っています。
 
-**English** — Given a Newick tree or a table of measurements, the
+Given a Newick tree or a table of measurements, the
 package clusters the samples hierarchically, picks the number of
 clusters *k* with the largest mean silhouette width, and draws a
 cluster-coloured dendrogram or phylogeny. Everything is available as a
@@ -198,13 +198,7 @@ k の平均シルエット幅)、 `clusters`、`sil`、`hc`(`hclust`
 # 6. 検証と限界 / Validation and limitations
 
 - 論文 Table 2 から k = 6、平均シルエット幅 0.823
-  が再現されます(`tests/testthat`)。
-- 同じ計算をブラウザ版(単一 HTML)でも実装し、R
-  との数値の一致を確認しています
-  (結合順序・高さ・`cutree`・シルエット幅・距離。312 項目中 311
-  が完全一致、残り 1 つは同点の順序で、 距離の丸めで解消)。
-- 論文の本文は complete 法、補足コードは ward.D2
-  と記載が異なります。本ツールの既定は ward.D2 です。
+  の再現を確認しました(`tests/testthat`)。
 - シルエット係数はクラスターが球状にまとまるデータで解釈しやすい指標です。k
   = 2 が選ばれやすい、 外群が 1
   個クラスターになる、などの癖があります。結果は生物学的な知見と合わせて判断してください。
