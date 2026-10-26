@@ -127,7 +127,7 @@ res <- run_silhouette_tree("my_table.xlsx", type = "table", sheet = "Data",
 0 は無視), `binsym`(0/1・両方 0 も一致), `cat`(カテゴリ),
 `skip`(使わない)。
 
-## 4.3 正規化の効果 / Why normalise
+## 4.3 正規化の効果について（補足） / Why normalise
 
 ``` r
 sapply(c(none = "none", minmax = "minmax", zscore = "zscore"), function(nm)
